@@ -13,7 +13,7 @@
 
         $idUsuario = mysqli_escape_string($connect, $_POST['idUsuario']);
  
-        $sql = "UPDATE usuario SET nome_usuario = '$nome_usuario', senha = '$senha', login = '$login', email = '$email', cpf = '$cpf', telefone = '$telefone'
+        $sql = "UPDATE usuario SET nome_usuario = '$nome_usuario', senha = MD5('$senha'), login = '$login', email = '$email', cpf = '$cpf', telefone = '$telefone'
         WHERE idUsuario = '$idUsuario'";
    
     if(mysqli_query($connect, $sql)):

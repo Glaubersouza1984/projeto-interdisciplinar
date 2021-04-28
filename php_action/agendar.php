@@ -15,6 +15,7 @@ if(isset($_POST['btn-agendar'])){
     $servicos = mysqli_escape_string($connect, $_POST['1 , 2, 3']);
     $id_usuario = mysqli_escape_string($connect, $_POST['id_usuario']);
 
+    
     $sql = "INSERT INTO agendar_servicos (data_solicitacao, data_servico, horas, usuario, servicos, servicos, servicos) VALUES ( now(), '$data', '$horas', '$id_usuario', '$servicos')";
 
     if(mysqli_query($connect, $sql)){

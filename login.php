@@ -68,7 +68,7 @@ endif;
             ?>
             <div class="row">
 
-                <div class="col s12 m6 push-m3">
+                <div class="col s12 m8 push-m2">
 
                     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                         <div class="input-field col s12">

@@ -68,12 +68,19 @@ mysqli_close($connect);
 
                                 <button type="submit" name="btn-agendar"
                                     class="btn waves-effect waves-large black accent-3"><a class="white-text"
-                                    href="php_action/agendar.php?php echo $dados['idUsuario']; ?>">Agendar</a> <i
-                                    class="large material-icons right">alarm_on</i></button>
+                                        href="php_action/agendar.php?php echo $dados['idUsuario']; ?>">Agendar</a> <i
+                                        class="large material-icons right">alarm_on</i></button>
 
                                 <br />
 
                                 <br />
+                                
+                                <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
+                                        href="home.php">Voltar</a></button>
+                                <br />
+                                
+                                <br />
+
                                 <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
                                         href="logout.php">Clique para sair!</a></button>
                                 <br />

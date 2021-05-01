@@ -11,4 +11,5 @@
 
     <?php
     endif;
+    session_unset();
 ?>

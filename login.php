@@ -2,9 +2,7 @@
 //conexão
 require_once 'php_action/db_connect.php';
 include_once 'includes/header.php';
-
-//sessão
-session_start();
+include_once 'includes/message.php';
 
 //botão enviar
 if(isset($_POST['btn-entrar'])):
@@ -96,5 +94,4 @@ endif;
 
 <?php
     include_once 'includes/footer.php';
-    include_once 'includes/message.php';
 ?>

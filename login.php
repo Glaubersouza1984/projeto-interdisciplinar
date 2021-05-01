@@ -62,7 +62,7 @@ endif;
             <?php
                 if(!empty($erros)):
                     foreach($erros as $erro):
-                        echo $erro;
+                        $_SESSION['mensagem'] = $erro;
                     endforeach;
                 endif;
             ?>
@@ -79,7 +79,7 @@ endif;
                             Senha: <input type="password" name="senha"></br>
                         </div>
                         <button type="submit" name="btn-entrar" class="btn black">Entrar</button>
-                        
+                    
                     </form>
 
                 </div>
@@ -95,5 +95,6 @@ endif;
 </html>
 
 <?php
-    include_once 'includes/footer.php'
+    include_once 'includes/footer.php';
+    include_once 'includes/message.php';
 ?>

@@ -38,7 +38,8 @@ mysqli_close($connect);
             <h2 class="header">
                 <h1 class="white-text">Olá
                     <?php echo $dados['nome_usuario']; ?>
-                <div class=""></div></h1>
+                    <div class=""></div>
+                </h1>
             </h2>
 
             <h3 class="center">Bem Vindo ao Salão Inteligente !!</h3>
@@ -55,15 +56,17 @@ mysqli_close($connect);
                                 para
                                 agendar</a></button>
                         <br /><br />
+                        <button type="submit" name="btn-historico" class="btn black"><a class="white-text"
+                                href="historico.php">Consultar Histórico</a></button>
+                        <br /><br />
                         <button type="submit" name="btn-editar" class="btn black"><a class="white-text"
                                 href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>">Editar
                                 seu
                                 cadastro</a></button>
                         <br /><br />
-                        <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
-                                href="logout.php">Clique
-                                para
-                                sair!</a></button>
+
+                        <button type="submit" name="btn-sair" class="btn grey"><a class="white-text"
+                                href="logout.php">Logout</a></button>
                         <br /><br />
                     </div>
                 </div>

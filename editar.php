@@ -29,7 +29,7 @@ endif;
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="password" name="senha" id="senha" value="<?php echo $dados['senha'];?>">
+                        <input type="password" name="senha" id="senha" required>
                         <label for="senha">Definir Senha</label>
                     </div>
 

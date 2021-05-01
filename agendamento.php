@@ -30,6 +30,7 @@ mysqli_close($connect);
             <h2 class="header">
                 <h1 class="white-text">Olá
                     <?php echo $dados['nome_usuario']; ?>
+                    <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario'];?>">
                 </h1>
             </h2>
 
@@ -64,15 +65,14 @@ mysqli_close($connect);
                                         </optgroup>
                                     </select>
                                 </div>
-                               
-                                <button \agendar.php?idUsuario=<?php echo $dados['idUsuario']; ?>
-                                    class="btn waves-effect waves-large black accent-3" type="submit" name="btn-agendar"
-                                    id="btn-agendar">Agendar
-                                    <i class="large material-icons right">alarm_on</i>
-                                </button>
 
-                                <br/>
-                                
+                                <button type="submit" name="btn-agendar"
+                                    class="btn waves-effect waves-large black accent-3"><a class="white-text"
+                                    href="php_action/agendar.php?php echo $dados['idUsuario']; ?>">Agendar</a> <i
+                                    class="large material-icons right">alarm_on</i></button>
+
+                                <br />
+
                                 <br />
                                 <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
                                         href="logout.php">Clique para sair!</a></button>

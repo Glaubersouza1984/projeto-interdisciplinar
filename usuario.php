@@ -1,5 +1,6 @@
 <?php
-    include_once 'includes/header.php'
+    include_once 'includes/header.php';
+    include_once 'includes/message.php';
 ?>
 
 <div class="parallax-container">
@@ -14,37 +15,37 @@
                 <form action="php_action/create.php" method="POST">
 
                     <div class="input-field col s12">
-                        <input type="text" name="nome_usuario" id="nome_usuario">
+                        <input type="text" name="nome_usuario" id="nome_usuario" required>
                         <label for="nome_usuario">Nome Completo</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="password" name="senha" id="senha">
+                        <input type="password" name="senha" id="senha" required>
                         <label for="senha">Definir Senha</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="text" name="login" id="login">
+                        <input type="text" name="login" id="login" required>
                         <label for="login">Defina seu Login de Usuário</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                         <label for="email">Digite seu E-mail</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="number" name="cpf" id="cpf">
+                        <input type="number" name="cpf" id="cpf" required>
                         <label for="cpf">Digite Seu CPF</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="tel" name="telefone" id="telefone" placeholder="03535518262">
+                        <input type="tel" name="telefone" id="telefone" placeholder="03535518262" required>
                         <label for="telefone">Digite Seu Telefone para Contato com DDD</label>
                     </div>
 
                     <button type="submit" name="btn-cadastrar" class="btn grey"> Cadastrar </button>
-                    <a href="index.php" type="submit" class="btn black"> Login </a>
+                    <a href="login.php" type="submit" class="btn black"> Login </a>
                 </form>
             </div>
         </div>

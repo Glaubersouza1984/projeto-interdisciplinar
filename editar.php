@@ -54,7 +54,8 @@ endif;
                     </div>
 
                     <button type="submit" name="btn-editar" class="btn grey"> Atualizar </button>
-                    <a href="index.php" type="submit" class="btn black"> Login </a>
+                    <a href="login.php" type="submit" class="btn black"> Novo Login </a>
+                    
                 </form>
             </div>
         </div>

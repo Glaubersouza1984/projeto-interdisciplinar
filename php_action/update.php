@@ -18,10 +18,10 @@
    
     if(mysqli_query($connect, $sql)):
         $_SESSION['mensagem'] = "Alterado com sucesso!";
-        header('Location: ../index.php?');
+        header('Location: ../home.php?');
     else: 
         $_SESSION['mensagem'] = "Erro ao alterar!";
-        header('Location: ../index.php?');
+        header('Location: ../home.php?');
     endif;
 
 endif;

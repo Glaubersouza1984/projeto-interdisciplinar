@@ -64,11 +64,19 @@ mysqli_close($connect);
                                         </optgroup>
                                     </select>
                                 </div>
-
-                                <button agendar.php?idUsuario=<?php echo $dados['idUsuario']; ?> class="btn waves-effect waves-large black accent-3" type="submit"
-                                    name="btn-agendar" id="btn-agendar">Agendar
+                               
+                                <button \agendar.php?idUsuario=<?php echo $dados['idUsuario']; ?>
+                                    class="btn waves-effect waves-large black accent-3" type="submit" name="btn-agendar"
+                                    id="btn-agendar">Agendar
                                     <i class="large material-icons right">alarm_on</i>
                                 </button>
+
+                                <br/>
+                                
+                                <br />
+                                <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
+                                        href="logout.php">Clique para sair!</a></button>
+                                <br />
 
                             </div>
                         </form>

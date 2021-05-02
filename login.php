@@ -77,7 +77,8 @@ endif;
                             Senha: <input type="password" name="senha"></br>
                         </div>
                         <button type="submit" name="btn-entrar" class="btn black">Entrar</button>
-                    
+                        <button type="submit" name="btn-cadastrar" class="btn grey"><a class="white-text"
+                        href="index.php">Cadastrar</a></button>
                     </form>
 
                 </div>

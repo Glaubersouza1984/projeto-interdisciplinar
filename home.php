@@ -36,8 +36,8 @@ mysqli_close($connect);
 
         <div class="row container">
             <h2 class="header">
-                <h1 class="white-text">Olá
-                    <?php echo $dados['nome_usuario']; ?>
+                <h1 class="white-text">Olá,
+                    <?php echo $dados['nome_usuario']; ?>.
                     <div class=""></div>
                 </h1>
             </h2>
@@ -52,12 +52,13 @@ mysqli_close($connect);
                         <h4 class="white-text">Selecione abaixo a melhor opção</h4>
                         <br /><br />
                         <button type="submit" name="btn-agendar" class="btn black"><a class="white-text"
-                                href="agendamento.php">Clique
+                                href="agendamento.php?idUsuario=<?php echo $dados['idUsuario']; ?>">Clique
                                 para
                                 agendar</a></button>
                         <br /><br />
                         <button type="submit" name="btn-historico" class="btn black"><a class="white-text"
-                                href="historico.php">Consultar Histórico</a></button>
+                                href="historico.php?idUsuario=<?php echo $dados['idUsuario']; ?>">
+                                Consultar Histórico</a></button>
                         <br /><br />
                         <button type="submit" name="btn-editar" class="btn black"><a class="white-text"
                                 href="editar.php?idUsuario=<?php echo $dados['idUsuario']; ?>">Editar

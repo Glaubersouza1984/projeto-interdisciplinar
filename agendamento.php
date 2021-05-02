@@ -1,20 +1,12 @@
 <?php
-require_once 'php_action/db_connect.php';
+include_once 'php_action/db_connect.php';
 include_once 'includes/header.php';
-
-session_start();
-
-if(!isset($_SESSION['logado'])):
-    header('Location: login.php');
+if(isset($_GET['idUsuario'])):
+    $idUsuario = mysqli_escape_string($connect, $_GET['idUsuario']);
+    $sql = "SELECT * FROM usuario WHERE idUsuario = $idUsuario";
+    $resultado = mysqli_query($connect, $sql);
+    $dados = mysqli_fetch_array($resultado);
 endif;
-
-//Dados
-$id = $_SESSION['id_usuario'];
-$sql = "SELECT * FROM usuario WHERE idUsuario = '$id'";
-$resultado = mysqli_query($connect, $sql);
-$dados = mysqli_fetch_array($resultado);
-mysqli_close($connect);
-
 ?>
 
 <html>
@@ -28,9 +20,8 @@ mysqli_close($connect);
 
         <div class="row container">
             <h2 class="header">
-                <h1 class="white-text">Olá
-                    <?php echo $dados['nome_usuario']; ?>
-                    <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario'];?>">
+                <h1 class="white-text">Ótimo,
+                    <?php echo $dados['nome_usuario']; ?>.
                 </h1>
             </h2>
 
@@ -40,8 +31,9 @@ mysqli_close($connect);
 
                     <div style="text-align:center;">
 
-                        <h1 class="white-text">Bora agendar!</h1>
-                        <form action="php_action/agendar.php" method="POST">
+                        <h1 class="white-text">Bora Agendar !!</h1>
+                        <form id="agendar" action="php_action/agendar.php" method="POST">
+                            <input type="hidden" name="idUsuario" value="<?php echo $dados['idUsuario'];?>">
 
                             <div class="input-field col s12">
                                 <h5 class="white-text">Quando?</h5>
@@ -57,28 +49,28 @@ mysqli_close($connect);
                                 <h5 class="white-text">O que vamos fazer?</h5>
 
                                 <div class="input-field col s12">
-                                    <select multiple>
+                                    <select name="servico">
                                         <option value="" disabled selected>Selecionar serviços :</option>
                                         <option id="1" name="1" value="1">Corte</option>
                                         <option id="2" name="2" value="2">Barba</option>
-                                        <option id="3" name="3" value="3">Sombrancelha</option>
+                                        <option id="3" name="3" value="3">Corte e Barba</option>
                                         </optgroup>
                                     </select>
                                 </div>
 
-                                <button type="submit" name="btn-agendar"
-                                    class="btn waves-effect waves-large black accent-3"><a class="white-text"
-                                        href="php_action/agendar.php?php echo $dados['idUsuario']; ?>">Agendar</a> <i
-                                        class="large material-icons right">alarm_on</i></button>
 
+                                <button type="submit" name="btn-agendar" id="btn-agendar"
+                                    class="btn waves-effect waves-large black accent-3"><a
+                                        class="white-text">Agendar</a>
+                                    <i class="large material-icons right">alarm_on</i></button>
                                 <br />
 
                                 <br />
-                                
+
                                 <button type="submit" name="btn-sair" class="btn black"><a class="white-text"
                                         href="home.php">Voltar</a></button>
                                 <br />
-                                
+
                                 <br />
 
                                 <button type="submit" name="btn-sair" class="btn black"><a class="white-text"

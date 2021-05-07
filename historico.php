@@ -6,6 +6,14 @@ include_once 'php_action/db_connect.php';
 //Header
 include_once 'includes/header.php';
 
+//sessão
+session_start();
+
+//verificação
+if(!isset($_SESSION['logado'])):
+    header('Location: login.php');
+endif;
+
 ?>
 
 <html>

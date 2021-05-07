@@ -13,15 +13,18 @@ if(isset($_POST['btn-agendar'])) {
     $dataformat = date("Y-m-d", strtotime($data));
     $horaformatada = date("H:i",strtotime($horas));
 
-echo $idUsuario;
-
 /*  insert na tabela agendar servicos    */
 $sql = "INSERT INTO agendar_servicos( data_solicitacao, data_servico, horas , usuario, servicos) VALUES (now(),'$dataformat','$horaformatada','$idUsuario','$servicos')";
 $sql = mysqli_query($connect, $sql); 
 
+$result = mysqli_query($connect, "SELECT MAX(idagendar_servicos) as 'id' FROM agendar_servicos");
+$result = mysqli_fetch_array($result);
+
+$idagendar = mysqli_escape_string($connect, $result['id']);
+
 /*  insert na tabela historico de  servicos    */
-$sql = "INSERT INTO historico_servicos(data_solicitacao, data_servico, servicos, status) VALUES (now(), '$dataformat','$servicos','1')";
-   $sql = mysqli_query($connect, $sql);   
+$sql = "INSERT INTO historico_servicos(idagendar_servicos, data_solicitacao, data_servico, servicos, status) VALUES ('$idagendar',now(), '$dataformat','$servicos','1')";
+  $sql = mysqli_query($connect, $sql);   
     }
 
     if(mysqli_query($connect, $sql)):

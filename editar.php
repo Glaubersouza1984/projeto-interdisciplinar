@@ -2,6 +2,14 @@
 include_once 'php_action/db_connect.php';
 include_once 'includes/header.php';
 
+//sessão
+session_start();
+
+//verificação
+if(!isset($_SESSION['logado'])):
+    header('Location: login.php');
+endif;
+
 if(isset($_GET['idUsuario'])):
     $idUsuario = mysqli_escape_string($connect, $_GET['idUsuario']);
     $sql = "SELECT * FROM usuario WHERE idUsuario = $idUsuario";

@@ -1,6 +1,15 @@
 <?php
 include_once 'php_action/db_connect.php';
 include_once 'includes/header.php';
+
+//sessão
+session_start();
+
+//verificação
+if(!isset($_SESSION['logado'])):
+    header('Location: login.php');
+endif;
+
 if(isset($_GET['idUsuario'])):
     $idUsuario = mysqli_escape_string($connect, $_GET['idUsuario']);
     $sql = "SELECT * FROM usuario WHERE idUsuario = $idUsuario";
@@ -52,8 +61,8 @@ endif;
                                     <select name="servico">
                                         <option value="" disabled selected>Selecionar serviços :</option>
                                         <option id="1" name="1" value="1">Corte</option>
-                                        <option id="2" name="2" value="2">Barba</option>
-                                        <option id="3" name="3" value="3">Corte e Barba</option>
+                                        <option id="4" name="4" value="4">Barba</option>
+                                        <option id="5" name="5" value="5">Corte e Barba</option>
                                         </optgroup>
                                     </select>
                                 </div>

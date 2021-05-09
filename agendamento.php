@@ -61,8 +61,8 @@ endif;
                                     <select name="servico">
                                         <option value="" disabled selected>Selecionar serviços :</option>
                                         <option id="1" name="1" value="1">Corte</option>
-                                        <option id="4" name="4" value="4">Barba</option>
-                                        <option id="5" name="5" value="5">Corte e Barba</option>
+                                        <option id="4" name="4" value="2">Barba</option>
+                                        <option id="5" name="5" value="3">Corte e Barba</option>
                                         </optgroup>
                                     </select>
                                 </div>
